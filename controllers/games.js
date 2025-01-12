@@ -6,6 +6,30 @@ const router = express.Router();
 
 const User = require('../models/user.js');
 
+router.get('/search', async (req, res) => {
+  try {
+    // Find the logged-in user
+    const currentUser = await User.findById(req.session.user._id);
+
+    // Get the search query
+    const query = req.query.query.toLowerCase();
+
+    // Filter games based on exact match in the title
+    const filteredGames = currentUser.games.filter((game) => {
+      return game.title.toLowerCase() === query;
+    });
+
+    // Render the index page with the filtered games
+    res.render('games/index.ejs', {
+      games: filteredGames, // Pass filtered games to the template
+      user: currentUser, // Pass the user object
+    });
+  } catch (error) {
+    console.error(error);
+    res.redirect('/');
+  }
+});
+
 router.get('/', async (req, res) => {
   try {
     // find the user

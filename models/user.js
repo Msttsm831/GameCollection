@@ -5,20 +5,20 @@ const gameSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Platform: {
+  platform: {
     type: String,
   },
-  Playtime: {
+  playtime: {
     type: String,
   },
-  Status: {
+  status: {
     type: String,
-    enum: ['Completed', 'Not started', 'started'],
+    enum: ['completed', 'not started', 'started', 'in progress'],
   },
-  Rating: {
+  rating: {
     type: Number,
   },
-  Image: {
+  image: {
     type: String,
   }
 });

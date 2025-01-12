@@ -1,5 +1,28 @@
 const mongoose = require('mongoose');
 
+const gameSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+  Platform: {
+    type: String,
+  },
+  Playtime: {
+    type: String,
+  },
+  Status: {
+    type: String,
+    enum: ['Completed', 'Not started', 'started'],
+  },
+  Rating: {
+    type: Number,
+  },
+  Image: {
+    type: String,
+  }
+});
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -10,6 +33,9 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  games: [gameSchema],
 });
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;

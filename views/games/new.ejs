@@ -1,0 +1,41 @@
+<!-- views/games/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a New Game</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Add a New Game</h1>
+
+    <form action="/users/<%= user._id %>/games" method="POST">
+      <label for="Image">Image:</label>
+      <input type="url" name="Image" id="Image" />
+      
+      <label for="title">Game Title:</label>
+      <input type="text" name="title" id="title" required/>
+
+      <label for="platform">Platform:</label>
+      <input type="text" name="platform" id="platform" required/>
+
+      <label for="playtime">Playtime:</label>
+      <input type="number" name="playtime" id="playtime" min="0" step="1" />
+
+      <label for="status">Status:</label>
+      <select id="status" name="status">
+        <option value="not started">Not Started</option>
+        <option value="in progress">In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <label for="rating">Rating:</label>
+      <input type="number" name="rating" id="rating" min="0" max="10" step="0.1"/>
+
+      <button type="submit">Add Game</button>
+    </form>
+
+  </body>
+</html>

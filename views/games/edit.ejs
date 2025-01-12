@@ -1,0 +1,82 @@
+<!-- views/games/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editing <%= game.title %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Edit <%= game.title %> on <%= game.platform %></h1>
+  <form
+    action="/users/<%= user._id %>/games/<%= game._id %>?_method=PUT"
+    method="POST"
+  >
+    <label for="title">Title:</label>
+    <input
+      type="text"
+      name="title"
+      id="title"
+      value="<%= game.title %>"
+    >
+    
+    <label for="platform">Platform:</label>
+    <input
+      type="text"
+      name="platform"
+      id="platform"
+      value="<%= game.platform %>"
+    >
+
+    <label for="playtime">Playtime (hours):</label>
+    <input
+      type="number"
+      name="playtime"
+      id="playtime"
+      value="<%= game.playtime %>"
+    >
+
+    <label for="status">Status:</label>
+    <select id="status" name="status">
+      <option
+        value="backlog"
+        <%= game.status === "backlog" ? "selected" : "" %>
+      >
+        Backlog
+      </option>
+      <option
+        value="in-progress"
+        <%= game.status === "in-progress" ? "selected" : "" %>
+      >
+        In Progress
+      </option>
+      <option
+        value="completed"
+        <%= game.status === "completed" ? "selected" : "" %>
+      >
+        Completed
+      </option>
+      <option
+        value="abandoned"
+        <%= game.status === "abandoned" ? "selected" : "" %>
+      >
+        Abandoned
+      </option>
+    </select>
+
+    <label for="rating">Rating (1-10):</label>
+    <input
+      type="number"
+      name="rating"
+      id="rating"
+      value="<%= game.rating %>"
+      min="1"
+      max="10"
+    >
+
+    <button type="submit">Update Game</button>
+  </form>
+</body>
+</html>

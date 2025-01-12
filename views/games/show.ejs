@@ -1,0 +1,34 @@
+<!-- views/games/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= game.title %></title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= game.title %> on <%= game.platform %></h1>
+
+    <p>Playtime: <%= game.playtime %> hours</p>
+    <p>Current Status: <%= game.status %></p>
+
+    <% if (game.rating) { %>
+    <p>Rating: <%= game.rating %>/10</p>
+    <% } %>
+
+    <!-- UPDATE GAME -->
+    <a href="/users/<%= user._id %>/games/<%= game._id %>/edit">
+      Edit this game
+    </a>
+
+    <!-- DELETE GAME -->
+    <form
+      action="/users/<%= user._id %>/games/<%= game._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Delete this game</button>
+    </form>
+  </body>
+</html>

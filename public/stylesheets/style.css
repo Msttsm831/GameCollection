@@ -1,0 +1,122 @@
+/* public/stylesheets/style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
+/* homepage Styling */
+.homepage-body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #F8F8FF;
+    background-color: #181515;
+}
+
+/* Container for the homepage content */
+.homepage-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Title styling */
+.homepage-title {
+    font-size: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 8px #8A2BE2, 0 0 10px #8A2BE2, 0 0 12px #8A2BE2;
+    margin-bottom: 16px;
+}
+
+/* Description styling */
+.homepage-description {
+    font-size: 19px;
+    color: #555555;
+    margin-bottom: 32px;
+}
+
+/* Button styling */
+.homepage-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1e293b;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.homepage-button:hover {
+    background-color: #334155;
+}
+
+/* Scrollable game covers section */
+.game-covers-container {
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Scrollable area */
+.game-covers-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px;
+    scroll-behavior: smooth;
+}
+
+/* Game cover images */
+.game-cover {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-cover:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #FFFFFF;
+}
+
+/* Navbar overall styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #420242;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Left-aligned site name with glow */
+.navbar-title {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 0 5px #8A2BE2, 0 0 10px #8A2BE2, 0 0 15px #8A2BE2;
+    margin-left: 25px;
+}
+
+/* Right-aligned links */
+.navbar-link {
+    color: white;
+    margin-left: 15px;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-link:hover {
+    background-color: #8A2BE2;
+    color: white;
+}
+
+  

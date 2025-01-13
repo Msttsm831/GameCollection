@@ -14,6 +14,24 @@ const isSignedIn = require('./middleware/isSignedIn');
 const authController = require('./controllers/auth');
 const gamesController = require('./controllers/games.js');
 
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
+// app.use(morgan('dev'));
+
+const path = require('path');
+
+// new code below this line ---
+app.use(express.static(path.join(__dirname, 'public')));
+// new code above this line ---
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : '3000';
 

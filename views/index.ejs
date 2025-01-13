@@ -6,10 +6,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Game Collection</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <body>
-    <%- include('./partials/_navbar.ejs') %>
-    <h1>My Game Collection</h1>
-    <p>Track, manage, and showcase your game collection.</p>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="/" class="navbar-title">My Game Collection</a>
+    </div>
+    <div class="navbar-right">
+      <a href="/auth/sign-in" class="navbar-link">Sign In</a>
+      <a href="/auth/sign-up" class="navbar-link">Sign Up</a>
+    </div>
+  </nav>
+  <body class="homepage-body">
+    <div class="homepage-container">
+      <h1 class="homepage-title">My Game Collection</h1>
+      <p class="homepage-description">
+        Track, manage, and showcase your game collection.
+      </p>
+    </div>
+    <div class="game-covers-container">
+      <div class="game-covers-scroll" id="gameCoversScroll">
+        <img src="https://images.launchbox-app.com/20fdc9bd-9e1d-4b11-9531-474266ad0ecd.jpg" alt="Game 1" class="game-cover" />
+        <img src="https://betweenlifeandgames.com/wp-content/uploads/2012/08/uncharted_2_cover.png" alt="Game 2" class="game-cover" />
+        <img src="https://cdn.mobygames.com/covers/4278925-tekken-5-playstation-2-front-cover.jpg" alt="Game 3" class="game-cover" />
+        <img src="https://m.media-amazon.com/images/I/71mrNn40chL.jpg" alt="Game 4" class="game-cover" />
+        <img src="https://assets1.ignimgs.com/2017/08/24/path-of-exile---button-1503612705551.jpg" alt="Game 5" class="game-cover" />
+      </div>
+      <div class="game-covers-container">
+        <div class="game-covers-scroll" id="gameCoversScroll">
+          <img src="https://images.launchbox-app.com/20fdc9bd-9e1d-4b11-9531-474266ad0ecd.jpg" alt="Game 1" class="game-cover" />
+          <img src="https://betweenlifeandgames.com/wp-content/uploads/2012/08/uncharted_2_cover.png" alt="Game 2" class="game-cover" />
+          <img src="https://cdn.mobygames.com/covers/4278925-tekken-5-playstation-2-front-cover.jpg" alt="Game 3" class="game-cover" />
+          <img src="https://m.media-amazon.com/images/I/71mrNn40chL.jpg" alt="Game 4" class="game-cover" />
+          <img src="https://assets1.ignimgs.com/2017/08/24/path-of-exile---button-1503612705551.jpg" alt="Game 5" class="game-cover" />
+        </div>
+        <div class="game-covers-container">
+          <div class="game-covers-scroll" id="gameCoversScroll">
+            <img src="https://images.launchbox-app.com/20fdc9bd-9e1d-4b11-9531-474266ad0ecd.jpg" alt="Game 1" class="game-cover" />
+            <img src="https://betweenlifeandgames.com/wp-content/uploads/2012/08/uncharted_2_cover.png" alt="Game 2" class="game-cover" />
+            <img src="https://cdn.mobygames.com/covers/4278925-tekken-5-playstation-2-front-cover.jpg" alt="Game 3" class="game-cover" />
+            <img src="https://m.media-amazon.com/images/I/71mrNn40chL.jpg" alt="Game 4" class="game-cover" />
+            <img src="https://assets1.ignimgs.com/2017/08/24/path-of-exile---button-1503612705551.jpg" alt="Game 5" class="game-cover" />
+          </div>
+    </div>    
   </body>
 </html>

@@ -2,34 +2,28 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= game.title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1><%= game.title %> on <%= game.platform %></h1>
-
-    <p>Playtime: <%= game.playtime %> hours</p>
-    <p>Current Status: <%= game.status %></p>
-
-    <% if (game.rating) { %>
-    <p>Rating: <%= game.rating %>/10</p>
-    <% } %>
-
-    <!-- UPDATE GAME -->
-    <a href="/users/<%= user._id %>/games/<%= game._id %>/edit">
-      Edit this game
-    </a>
-
-    <!-- DELETE GAME -->
-    <form
-      action="/users/<%= user._id %>/games/<%= game._id %>?_method=DELETE"
-      method="POST"
-    >
-      <button type="submit">Delete this game</button>
-    </form>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= game.title %></title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="show-game-details-container">
+    <div class="show-game-image-container">
+      <img src="<%= game.image %>" alt="<%= game.title %>" class="show-game-image">
+    </div>
+    <div class="show-game-info-container">
+      <h1><%= game.title %> on <%= game.platform %></h1>
+      <p>Playtime: <%= game.playtime %> hours</p>
+      <p>Current Status: <%= game.status %></p>
+      <p>Rating: <%= game.rating %>/10</p>
+      <a href="/users/<%= user._id %>/games/<%= game._id %>/edit" class="show-game-details-link">Edit this game</a>
+      <form action="/users/<%= user._id %>/games/<%= game._id %>?_method=DELETE" method="POST" class="show-game-details-form">
+        <button type="submit" class="show-game-details-button">Delete this game</button>
+      </form>
+    </div>
+  </div>
+</body>
 </html>

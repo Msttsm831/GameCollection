@@ -6,7 +6,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add a New Game</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
@@ -14,8 +13,8 @@
 
     <form action="/users/<%= user._id %>/games" method="POST">
       <label for="image">Image:</label>
-      <input type="url" name="image" id="image" />
-      
+      <input type="url" name="image" id="image" required/>
+
       <label for="title">Game Title:</label>
       <input type="text" name="title" id="title" required/>
 

@@ -199,3 +199,79 @@ body {
 .signin-container button[type="submit"]:hover, .signup-container button[type="submit"]:hover {
     background-color: #8A2BE2; 
 }
+
+
+
+
+
+
+
+
+/* Game collection grid layout after signing in */
+
+.add-game-link {
+    display: inline-block;
+    background-color: #420242; 
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 20px 0; 
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.add-game-link:hover {
+    background-color: #8A2BE2; 
+    color: #FFFFFF; 
+}
+
+
+.game-item-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.game-item {
+    background-color: #292929; 
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #8A2BE2; 
+}
+
+.game-image {
+    width: 100%; 
+    height: auto;
+    border-radius: 5px;
+}
+
+.game-title-button {
+    background-color: #420242; 
+    color: white;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px; 
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.game-title-button:hover {
+    background-color: #8A2BE2; 
+}
+
+.game-details {
+    color: #ccc;
+    font-size: 14px;
+    padding: 10px 0; 
+    text-align: center; 
+}
+

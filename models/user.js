@@ -13,7 +13,7 @@ const gameSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ['completed', 'not-started', 'started', 'in progress'],
+    enum: ['completed', 'not started', 'started', 'in progress'],
   },
   rating: {
     type: Number,

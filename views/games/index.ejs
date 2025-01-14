@@ -8,26 +8,27 @@
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Your Game Collection</h1>
-    <a href="/users/<%= user._id %>/games/new">Add a New Game</a>
-    <!-- Display the user's game collection -->
-    <ul>
-      <% if (Array.isArray(games) && games.length > 0) { %>
-        <% games.forEach((game) => { %>
-          <li>
-            <a href="/users/<%= user._id %>/games/<%= game._id %>">
-              <%= game.title %> on <%= game.platform %>
-            </a>
-            - Playtime: <%= game.playtime %> hours, Status: <%= game.status %>
-            <div>
-              <img src="<%=game.image%>" />
-            </div>
-          </li>
-        <% }) %>
-      <% } else { %>
-        <li>No games in your collection yet. </li>
-      <% } %>
-    </ul>
-  </body>
+    <div class="collection-page-container">
+        <h1 class="collection-page-title">Your Game Collection</h1>
+        <a href="/users/<%= user._id %>/games/new" class="add-game-link">Add a New Game</a>
+        <div class="game-item-container">
+            <% if (Array.isArray(games) && games.length > 0) { %>
+                <% games.forEach((game) => { %>
+                    <div class="game-item">
+                        <img src="<%= game.image %>" alt="<%= game.title %>" class="game-image">
+                        <a href="/users/<%= user._id %>/games/<%= game._id %>" class="game-title-button">
+                            <%= game.title %> on <%= game.platform %>
+                        </a>
+                        <div class="game-details">
+                            Playtime: <%= game.playtime %> hours, Status: <%= game.status %>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No games in your collection yet.</p>
+            <% } %>
+        </div>
+    </div>
+</body>
 </html>
 

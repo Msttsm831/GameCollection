@@ -1,22 +1,84 @@
-/* public/stylesheets/style.css */
-
+/* Import font and general body settings */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
 
-/* homepage Styling */
-.homepage-body {
-    font-family: 'Orbitron', sans-serif;
+body {
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    color: #F8F8FF;
-    background-color: #181515;
+    font-family: 'Orbitron', sans-serif;
+    padding-top: 50px; 
+    background-color: #181515; 
+    color: #F8F8FF; 
 }
 
-/* Container for the homepage content */
+/* Navbar styling */
+.main-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #420242; 
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10; 
+}
+
+.navbar-left, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-title {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 0 5px #8A2BE2, 0 0 10px #8A2BE2, 0 0 15px #8A2BE2; 
+}
+
+.navbar-link, .navbar-button {
+    color: white;
+    margin-left: 15px; 
+    font-size: 18px;
+    text-decoration: none;
+    padding: 5px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-right {
+    margin-right: 20px; 
+}
+
+/* Hover effects */
+.navbar-link:hover, .navbar-button:hover {
+    background-color: #8A2BE2; 
+    color: white;
+}
+
+.search-form {
+    display: inline-block;
+}
+
+.search-form input[type="text"] {
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.search-form button {
+    background-color: #8A2BE2;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #9a4bed;
+}
+
+/* Container homepage */
 .homepage-container {
     text-align: center;
     padding: 20px;
@@ -56,17 +118,20 @@
 
 /* Scrollable game covers section */
 .game-covers-container {
-    margin: 30px auto;
     text-align: center;
+    margin: 30px auto;
+    width: 100%; 
+    overflow: hidden; 
 }
 
 /* Scrollable area */
 .game-covers-scroll {
     display: flex;
+    justify-content: center; 
+    flex-wrap: nowrap; 
     overflow-x: auto;
     gap: 15px;
     padding: 10px;
-    scroll-behavior: smooth;
 }
 
 /* Game cover images */
@@ -83,40 +148,54 @@
     box-shadow: 0 0 20px #FFFFFF;
 }
 
-/* Navbar overall styling */
-.navbar {
+
+
+/*sign-in and sign-up pages */
+.signin-container, .signup-container {
+    background-color: #292929; 
+    padding: 40px;
+    width: 320px; 
+    margin: 100px auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+/*form elements */
+.signin-container h1, .signup-container h1 {
+    color: #FFFFFF; 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.signin-container form, .signup-container form {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    background-color: #420242;
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: center; 
 }
 
-/* Left-aligned site name with glow */
-.navbar-title {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    text-shadow: 0 0 5px #8A2BE2, 0 0 10px #8A2BE2, 0 0 15px #8A2BE2;
-    margin-left: 25px;
+.signin-container input[type="text"], .signin-container input[type="password"],
+.signup-container input[type="text"], .signup-container input[type="password"] {
+    width: 100%; 
+    padding: 8px;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background: #333; 
+    color: #fff; 
 }
 
-/* Right-aligned links */
-.navbar-link {
-    color: white;
-    margin-left: 15px;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 5px 10px;
+.signin-container button[type="submit"], .signup-container button[type="submit"] {
+    width: 100%; 
+    padding: 10px;
+    background-color: #420242; 
+    border: none;
+    
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar-link:hover {
-    background-color: #8A2BE2;
     color: white;
+    cursor: pointer;
+    margin-top: 15px; 
 }
 
-  
+.signin-container button[type="submit"]:hover, .signup-container button[type="submit"]:hover {
+    background-color: #8A2BE2; 
+}

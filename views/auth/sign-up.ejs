@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign Up</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
-  <body>
+<!-- views/auth/sign-up.ejs -->
+
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="signup-container">
     <h1>Create a new account!</h1>
     <form action="/auth/sign-up" method="POST">
       <label for="username">Username:</label>
@@ -16,5 +21,7 @@
       <input type="password" name="confirmPassword" id="confirmPassword" />
       <button type="submit">Sign up</button>
     </form>
-  </body>
+  </div>
+</body>
+
 </html>

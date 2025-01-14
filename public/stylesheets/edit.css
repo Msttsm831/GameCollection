@@ -1,0 +1,42 @@
+.edit-game-form {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #292929;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.edit-game-form h1 {
+    text-align: center;
+    color: #FFFFFF;
+}
+.edit-game-form label {
+    display: block;
+    color: #CCC;
+    margin-top: 20px;
+}
+.edit-game-form input[type="text"],
+.edit-game-form input[type="url"],
+.edit-game-form input[type="number"],
+.edit-game-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #555;
+    background: #333;
+    color: #FFF;
+    border-radius: 4px;
+}
+.edit-game-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #8A2BE2;
+    color: #FFF;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.edit-game-form button:hover {
+    background-color: #9a4bed;
+}

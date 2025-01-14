@@ -6,15 +6,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editing <%= game.title %></title>
-  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link rel="stylesheet" href="/stylesheets/edit.css" />
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <h1>Edit <%= game.title %> on <%= game.platform %></h1>
-  <form
-    action="/users/<%= user._id %>/games/<%= game._id %>?_method=PUT"
-    method="POST"
-  ><label for="image">Game Image URL:</label>
+  <form class="edit-game-form" action="/users/<%= user._id %>/games/<%= game._id %>?_method=PUT" method="POST">
+  <label for="image">Game Image URL:</label>
   <input
     type="url"
     name="image"

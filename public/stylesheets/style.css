@@ -335,3 +335,60 @@ body {
 .show-game-details-link:hover {
     background-color: #334155;
 }
+
+
+
+
+
+
+
+/* Container for the form to add a new game */
+.new-game-container {
+    background-color: #292929; 
+    padding: 40px;
+    width: 320px; 
+    margin: 100px auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+
+.new-game-container h1 {
+    color: #FFFFFF; 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.new-game-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.new-game-container input[type="text"], 
+.new-game-container input[type="url"], 
+.new-game-container input[type="number"], 
+.new-game-container select {
+    width: 100%; 
+    padding: 4px;
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background: #333; 
+    color: #fff; 
+}
+
+.new-game-container button {
+    width: 100%; 
+    padding: 10px;
+    background-color: #420242; 
+    border: none;
+    border-radius: 5px; 
+    color: white;
+    cursor: pointer;
+    margin-top: 15px; 
+}
+
+.new-game-container button:hover {
+    background-color: #8A2BE2; 
+}
